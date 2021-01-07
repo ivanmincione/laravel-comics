@@ -1,0 +1,85 @@
+header {
+
+    .header-top{
+        background-color: $colorPrimary;
+
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            li{
+
+                &:last-child{
+                    margin-left: $spacing *2 ;
+                }
+
+                a{
+                    color: white;
+                    font-size: $fontSize - 6px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .header-bottom{
+        border-bottom: 1px solid #ebebeb;
+
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+                .logo {
+                    width: 80px;
+                    height: 80px;
+
+                    a{
+                        display: inline-block;
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .menu-header {
+
+                    ul{
+                        display: flex;
+
+                        li{
+                            padding: 0 $spacing / 2;
+
+                            a{
+                                color: $colorTextMenu;
+                                font-size: $fontSize;
+                                font-weight: bold;
+                                line-height: 110px;
+                                display: inline-block;
+
+                                &:hover, &.active{
+                                    color: $colorPrimary;
+                                    border-bottom: 4px solid $colorPrimary;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .search-bar {
+
+                    input {
+                        border: none;
+                        outline: none;
+                        padding: $spacing / 2;
+                        border-bottom: 2px solid $colorPrimary;
+                    }
+                }
+
+        }
+    }
+}

@@ -1,7 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Open Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.uppercase{
+    text-transform: uppercase;
 }
