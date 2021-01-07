@@ -34,6 +34,11 @@ a {
   text-transform: uppercase;
 }
 
+.jumbo {
+  background-image: url("/images/jumbotron.jpg");
+  padding: 210px 0;
+}
+
 header .header-top {
   background-color: #0282F9;
 }
