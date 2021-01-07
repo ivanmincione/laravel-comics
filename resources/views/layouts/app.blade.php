@@ -15,6 +15,8 @@
 
     </head>
     <body>
-        <h1>DC Comics</h1>
+        @include("partials.header")
+        @yield("content")
+        @include("partials.footer")
     </body>
 </html>
