@@ -4,8 +4,10 @@
     @include("partials.jumbotron")
 
     <section id="comics">
-
         <div class="container">
+            <div class="title-section">
+                <h2 class="uppercase"> current series </h2>
+            </div>
             <div class="box-comics">
                 @foreach ($series as $value)
                     <div class="card">
