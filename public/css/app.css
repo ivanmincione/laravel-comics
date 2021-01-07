@@ -160,3 +160,47 @@ header .header-bottom .navbar .search-bar input {
   margin-top: 5px;
 }
 
+#comics .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#comics .button .btn-load {
+  background-color: #0282F9;
+}
+
+#comics .button .btn-load a {
+  display: inline-block;
+  padding: 10px 60px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#comics .shop-link {
+  background-color: #0282F9;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#comics .shop-link .card-shop {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+#comics .shop-link .card-shop img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#comics .shop-link .card-shop a {
+  color: #fff;
+}
+

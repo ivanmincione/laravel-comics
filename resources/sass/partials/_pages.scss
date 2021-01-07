@@ -2,6 +2,7 @@
     background-color: $colorDarkSection;
     color: $colorTextDarkSection;
 
+
     .title-section{
         background-color: $colorPrimary;
         display: inline-block;
@@ -39,6 +40,51 @@
                 margin-top: 5px;
             }
         }
+    }
+
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: $spacing 0;
+
+        .btn-load{
+            background-color: $colorPrimary;
+
+            a{
+                display: inline-block;
+                padding: $spacing /2 $spacing * 3 ;
+                font-size: $fontSize;
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+    }
+
+    .shop-link {
+        background-color: $colorPrimary;
+        padding: $spacing 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card-shop {
+            display: flex;
+            align-items: center;
+            margin: $spacing;
+
+            img{
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+            }
+
+            a{
+                color: #fff;
+            }
+        }
+
     }
 
 }
