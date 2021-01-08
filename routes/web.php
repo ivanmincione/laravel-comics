@@ -15,10 +15,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $data = [
-        "series" => config("comics")    
+        "series" => config("comics")
     ];
     return view('home', $data);
 })-> name("homepage");
+
+Route::get("/comic/{id}", function($id) {
+    $comics = config('comics');
+    //utilizzo la funzione php array_key_exists per verificare se la key (id) esiste nell'array
+    if(array_key_exists($id, $comics))  {
+        $item = $comics[$id];
+        $data = [
+           'comic' => $item
+       ];
+       return view('details', $data);
+    }
+       abort("404");
+})->name("page-details");
 
 Route::get('contact-us', function () {
     return view("contact");
