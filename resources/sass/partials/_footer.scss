@@ -1,15 +1,123 @@
-footer{
-    .footer-top{
-        padding: 200px 0;
-        background-image: url("/images/footer-bg.jpg");
+.footer-top {
+    background-image: url('/images/footer-bg.jpg');
+    background-size: cover;
 
-        .bg-footer{
+    .footer-top-inner {
+        padding: $spacing * 2 0;
+        background-image: url('/images/dc-logo-bg.png');
+        background-repeat: no-repeat;
+        background-position: right;
 
-            img{
-                width: 100%;
-                display: block;
+        .footer-top-upper {
+            @include flexbox(row, flex-start, flex-start);
+
+            .footer-top-menu {
+                padding-right: $spacing * 2;
+
+                .footer-top-menu-title {
+                    color: $footer_title_color;
+                    font-size: $fontSize + 6px;
+                    margin-bottom: $spacing;
+                }
+
+                ul {
+                    list-style-type: none;
+                    margin-bottom: $spacing;
+                    padding: 0;
+
+                    li {
+                        margin: 5px 0;
+
+                        a {
+                            color: $footer_text_color;
+                            font-size: $fontSize - 4px;
+
+                            &:hover {
+                                color: $colorPrimary;
+                            }
+                        }
+                    }
+                }
             }
         }
+    }
 
+    .footer-copyright {
+
+        p {
+            color: $footer_text_color;
+            font-size: $fontSize - 4px;
+            margin: 0;
+
+            a {
+                color: $colorPrimary;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    background: $footer_bg_color;
+    padding: $spacing * 2 0;
+
+    .footer-bottom-left, .footer-bottom-right {
+        float: left;
+        width: 50%;
+    }
+
+    .cta {
+        background: transparent;
+        border: 2px solid $colorPrimary;
+        font-size: $fontSize;
+        padding: $spacing /2 $spacing;
+        transition: 0.5s;
+        display: inline-block;
+        color: white;
+
+        &:hover {
+            background: $colorPrimary;
+        }
+    }
+
+    .social {
+        @include flexbox(row, flex-end);
+
+        .social-title {
+            color: $colorPrimary;
+            font-size: $fontSize + 5px;
+            line-height: 50px;
+            margin-right: $spacing;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li{
+                display: inline-block;
+                margin-left: $spacing;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            // ciclo for each per scorrere le icone dei social e concatenare URL col nome di ogni singola icona salvato nelle variabili
+            @each $icon in $footer_socials {
+                li.#{$icon} {
+                    background-image: url('/images/footer-#{$icon}.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            a {
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+
+            }
+        }
     }
 }
