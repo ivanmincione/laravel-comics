@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+    color: $colorPrimary;
+    margin: $spacing * 2 0;
+}
+
+.btn-homepage{
+
+    @include flexbox;
+    margin-bottom: $spacing * 2;
+
+    a{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: $spacing $spacing * 2;
+        background-color: $colorPrimary;
+    }
+}

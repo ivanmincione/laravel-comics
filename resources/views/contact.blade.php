@@ -1,7 +1,7 @@
-@extends("layouts.app")
+{{-- @extends("layouts.app")
 
 @section("content")
     <h1>Contact</h1>
 @endsection
 
-@section("page-title", "Contact - Laravel DC Comics")
+@section("page-title", "Contact - Laravel DC Comics") --}}

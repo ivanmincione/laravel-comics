@@ -17,7 +17,12 @@ h1,h2,h3,h4,h5,h6{
     margin: 0 auto;
 }
 
-.container::after {
+.small-container{
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.container::after, .small-container::after {
     clear: both;
     content: '';
     display: table;
@@ -40,5 +45,5 @@ a{
     background-position-x: center;
     background-size: cover;
     padding: 210px 0;
-    display: block;    
+    display: block;
 }

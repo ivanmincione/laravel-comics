@@ -9,16 +9,18 @@
                 <h2 class="uppercase"> current series </h2>
             </div>
             <div class="box-comics">
-                @foreach ($series as $value)
+                @foreach ($series as $index => $value)
                     <div class="card">
-                        <div class="card-image">
-                            <img src="{{ $value["thumb"] }}" alt="{{ $value["series"] }}">
-                        </div>
-                        <div class="card-title">
-                            <p class="uppercase">
-                                {{ $value["series"] }}
-                            </p>
-                        </div>
+                        <a href="{{ route('page-details', ['id' => $index]) }}">
+                            <div class="card-image">
+                                <img src="{{ $value["thumb"] }}" alt="{{ $value["series"] }}">
+                            </div>
+                            <div class="card-title">
+                                <p class="uppercase">
+                                    {{ $value["series"] }}
+                                </p>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

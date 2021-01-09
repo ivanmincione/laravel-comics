@@ -15,14 +15,24 @@
     }
 
     .box-comics{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        @include flexbox(row, space-around, baseline, wrap);
 
         .card{
             flex-basis: 180px;
             margin: $spacing / 2;
             text-align: center;
+
+            a{
+                color: white;
+                display: block;
+                opacity: 0.7;
+
+                &:hover{
+                    opacity: 1;
+
+
+                }
+            }
 
             .card-image{
                 width: 180px;
@@ -44,9 +54,7 @@
 
 
     .button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexbox;
         margin: $spacing 0;
 
         .btn-load{
@@ -63,11 +71,9 @@
     }
 
     .shop-link {
+        @include flexbox;
         background-color: $colorPrimary;
         padding: $spacing 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         .card-shop {
             display: flex;
@@ -87,4 +93,212 @@
 
     }
 
+}
+
+// --------------------------------------------------------------------------
+
+.comic-thumb {
+    background-color: $colorPrimary;
+
+    .comic-thumb-container {
+        position: relative;
+        padding: $spacing * 2 0;
+
+        .comic-thumb-wrapper {
+            position: absolute;
+            bottom: 20px;
+            border: 1px solid #fff;
+
+            span {
+                position: absolute;
+                background-color: $colorPrimary;
+                color: #fff;
+                padding: $spacing / 4;
+
+                &.comic-type {
+                    top: 0;
+                    left: 0;
+                }
+
+                &.comic-gallery {
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                }
+            }
+
+            img {
+                display: block;
+            }
+        }
+    }
+}
+
+#comic-main {
+    padding: 60px 0 100px 0;
+
+    .comic-info {
+        float: left;
+        width: calc(100% / 3 * 2);
+
+        h1 {
+            color: $colorTitle;
+            text-align: center;
+            margin-bottom: $spacing;
+        }
+
+        .comic-availability-container {
+            @include flexbox;
+            background-color: #55ba59;
+            border-bottom: 1px solid #357739;
+            font-weight: 600;
+
+            .price, .availability, .check {
+                padding: 15px;
+            }
+
+            .price {
+                flex-grow: 2;
+            }
+
+            .availability {
+                border-right: 1px solid #357739;
+            }
+
+            .price, .availability {
+                color: #bafd9c;
+            }
+
+            .comic-price, .check {
+                color: #fff;
+            }
+        }
+
+        .comic-description {
+            line-height: 1.8;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+    }
+
+    .comic-adv {
+        float:left;
+        width: calc(100% / 3);
+        text-align: right;
+
+        h5{
+            margin-bottom: $spacing;
+        }
+    }
+}
+
+#comic-details {
+    background-color: #F6F6F6;
+    border-top: 1px solid $borderDetailsColor;
+    padding: $spacing * 3 0;
+
+    .talent, .specs {
+        width: calc(50% - #{$columnSpacing});
+        box-sizing: border-box;
+        float: left;
+
+        h2 {
+            color: $colorTitle;
+            margin-bottom: $spacing;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                @include flexbox(row, flex-start, flex-start);
+                border-top: 1px solid #e3e3e3;
+                padding: $spacing / 2 0;
+                font-weight: 600;
+
+                &:last-child {
+                    border-bottom: 1px solid $borderDetailsColor;
+                }
+
+                span:first-child {
+                    min-width: calc(100% / 3);
+                    max-width: calc(100% / 3);
+                    color: $colorTitle;
+                    font-size: $fontSize - 2px;
+                }
+
+                span:last-child {
+                    font-size: $fontSize - 2px;
+                }
+
+                a {
+                    color: #8cdffe;
+                    font-size: $fontSize - 4px;
+                }
+            }
+        }
+    }
+
+    .talent {
+        margin-right: $columnSpacing;
+    }
+
+    .specs {
+        margin-left: $columnSpacing;
+    }
+}
+
+#comic-bottom {
+    background-color: #F6F6F6;
+    border-top: 1px solid $borderDetailsColor;
+
+    .icon-box-container {
+        @include flexbox;
+
+        .icon-box {
+            border-left: 1px solid $borderDetailsColor;
+            flex-grow: 1;
+            padding: 10px;
+
+            &:hover {
+                background-color: $iconColorHover;
+
+                a {
+                    color: $colorTitle;
+                }
+            }
+
+            &:last-child {
+                border-right: 1px solid $borderDetailsColor;
+            }
+
+            a {
+                @include flexbox(row, space-between, flex-start);
+                color: $secondary_text_color;
+            }
+
+            .icon-box-image {
+                background-image: url('/images/cta-icons.png');
+                display: inline-block;
+                width: $icon_box_image_size;
+                height: $icon_box_image_size;
+            }
+
+            // ciclo for per scorrere i contenitori delle icone 
+            @for $i from 0 through 3 {
+                &:nth-child(#{$i + 1}){
+                    .icon-box-image {
+                        background-position: $icon_box_image_size * $i 0;
+                    }
+
+                    &:hover .icon-box-image {
+                        background-position: $icon_box_image_size * $i $icon_box_image_size;
+                    }
+                }
+            }
+        }
+
+    }
 }
